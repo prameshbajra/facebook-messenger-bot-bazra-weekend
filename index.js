@@ -44,10 +44,7 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN;
 
 // Heorku ko console malogs dekhauna lai ...
 function sendTextMessage(sender, text) {
-    // let messageData = { text: text }
-    let messageData = {
-        text: "Hello, How are you?"
-    }
+    let messageData = { text: text }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {
