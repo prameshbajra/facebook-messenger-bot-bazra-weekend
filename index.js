@@ -34,7 +34,7 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
                 continue
             }
-            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+            sendTextMessage(sender, `Copied: ${text.substring(0, 200)}`)
         }
     }
     res.sendStatus(200)
@@ -73,8 +73,8 @@ function sendGenericMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
+                    "title": "Contact me",
+                    "subtitle": "Shoot me an e-mail",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
@@ -86,8 +86,8 @@ function sendGenericMessage(sender) {
                         "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
+                    "title": "Contact me",
+                    "subtitle": "Drop a DM at twitter",
                     "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
                     "buttons": [{
                         "type": "postback",
