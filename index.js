@@ -30,7 +30,7 @@ app.post('/webhook/', function (req, res) {
         let sender = event.sender.id
         if (event.message && event.message.text) {
             let text = event.message.text
-            if (text === 'show') {
+            if (text === 'show' || text === 'contact' || text === 'hey' || text === 'hi') {
                 sendGenericMessage(sender)
                 continue
             }
@@ -74,25 +74,16 @@ function sendGenericMessage(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Contact me",
-                    "subtitle": "Shoot me an e-mail",
+                    "subtitle": "Feel free to contact me if you want your own website",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
-                        "title": "web url"
+                        "url": "https://prameshbajra.github.io/",
+                        "title": "My website and Blogs"
                     }, {
                         "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for first element in a generic bubble",
-                    }],
-                }, {
-                    "title": "Contact me",
-                    "subtitle": "Drop a DM at twitter",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for second element in a generic bubble",
+                        "title": "My website",
+                        "payload": "My website.",
                     }],
                 }]
             }
