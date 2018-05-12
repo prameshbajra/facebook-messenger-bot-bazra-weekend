@@ -35,6 +35,7 @@ app.post('/webhook/', function (req, res) {
                 continue
             }
             sendTextMessage(sender, `Copied: ${text.substring(0, 200)}`)
+            sendGenericMessage(sender)
         }
     }
     res.sendStatus(200)
